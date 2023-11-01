@@ -30,7 +30,7 @@ result = Average(num1, num2);
 printf("두 실수의 평균 : %f\n", result);
 return 0;
 }
-float Average(float x, float y) // 함수 정
+float Average(float x, float y) // 함수 정의
 {
 	float z;
 	z = (x + y) / 2;
@@ -49,7 +49,7 @@ int main(void)
 
 	printf("1부터 10까지의 합은 %d다. \n, result");
 
-	result = 0;
+	result = 0; // result 값을 0으로 다시 초기화한다.
 
 	for (i = 7; i <= 17; i++)
 		result += i;
@@ -60,7 +60,7 @@ int main(void)
 	printf("1부터 10까지 합은 %d다.\n", Integral(1, 10));
 	printf("7부터 17까지 합은 %d다.\n", Integral(7, 17));
 
-	return 0; // result 값을 0으로 다시 초기화한다.
+	return 0; 
 }
 
 int Integral(int start, int end) // 함수 정의
@@ -69,5 +69,32 @@ int Integral(int start, int end) // 함수 정의
 	for (i = start; i <= end; i++)
 		sum += i;
 	return sum;
+}
+#endif
+
+#if 01
+#include <stdio.h>
+
+void upper_case(char ch);
+int main(void)
+{
+	char ch1, ch2;
+	while ((ch1 = getchar()) != EOF) {
+		upper_case(ch1);
+	}
+	return 0;
+
+}
+
+void upper_case(char ch) // return 값이 없는 이유?
+다른 예제들은 거의 return 값을 이용하여 반환되는 값을 사용했지만
+void를 사용했기 때문에 return 값을 사용하지 않는다. 하나를 입력받아서 하나를 출력하는 값이 있기 때문에 return 값이 필요가 없다.
+{
+	char res;
+	if (ch >= 'a' && ch <= 'z')
+		res = ch - 32;
+	else
+		res = ch;
+	putchar(res);
 }
 #endif
