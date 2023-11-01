@@ -98,3 +98,32 @@ void를 사용했기 때문에 return 값을 사용하지 않는다. 하나를 �
 	putchar(res);
 }
 #endif
+
+팩토리얼 함수는 함수에서 자기 자신을 계속 호출하기 때문에 종료 조건을 결정해줘야지만 무한반복하지 않는다.
+int factorial(int n)
+{
+if(n <= 1) return 1; // 종료 조건 (종료조건이 없으면 무한반복된다)
+else return n * factorial(n-1);
+⋮
+}
+
+10 팩토리얼 구하기 // 이럴 때 재귀함수가 좋은 이유가 무엇일까?
+데이터 N개로 이뤄진 문제가 N-1개 문제를 해결하면 간단하게 해결될 때 사용
+int factorial(int n);
+int main(void)
+{
+	int fact_num;
+	fact_num = factorial(10);
+
+	printf("10 팩토리얼 : %d\n", fact_num);
+
+	return 0;
+}
+
+int factorial(int n)
+{
+	if (n <= 1)
+		return(1);
+	else
+		return(n * factorial(n - 1));
+}
