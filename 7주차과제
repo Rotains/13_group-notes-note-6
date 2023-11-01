@@ -2,3 +2,20 @@
 정의된 함수를 그대로 쓰기위해서는 이름이 중요하다. 또한 의미에 맞는 함수를 사용하자.
 함수를 정의할 때 반드시 반환되는 리턴 값이 있어야 한다.
 함수를 선언하지 않고 함수를 사용하면 오류가 뜨기 때문에 선언해야한다.
+
+#include <stdio.h>
+int sumtwo(int a, int b); // 선언을 먼저 해줘야 한다.
+int main()
+{
+	int x = 10, y = 5;
+	int value;
+	value = sumtwo(x, y); // 선언한 함수를 호출한다.
+	printf("두수의 합 : %d\n", value);
+	return 0;
+}
+int sumtwo(int a, int b)
+{
+	int result;
+	result = a + b;
+	return result;
+}
