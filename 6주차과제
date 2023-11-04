@@ -127,3 +127,44 @@ int factorial(int n)
 	else
 		return(n * factorial(n - 1));
 }
+
+
+265p 11번 문제
+#include "myheader.h"  // 헤더
+
+int main(void) {
+   //최댓값 최소값
+   int b[] = { 20,34,12,24,54,91,9,40,81,10 };
+   int size = sizeof(b) / sizeof(int);
+   
+   int max_result = max_Array(b, size); // 최댓값 함수 호출
+   int min_result = min_Array(b, size); // 최소값 함수 호출
+   printf("최댓값 : %d , 최소값 : %d", max_result, min_result);
+   return 0;
+}
+
+
+// 함수 부분
+
+// 최댓값
+int max_Array(int Array[], int size) {
+   int max = -1000;
+
+   for (int i = 0; i < size; i++) {
+      if (Array[i] >= max) {
+         max = Array[i];
+      }
+   }
+   return max;
+}
+//최소값
+int min_Array(int Array[], int size) {
+   int min = 1000;
+
+   for (int i = 0; i < size; i++) {
+      if (Array[i] <= min) {
+         min = Array[i];
+      }
+   }
+   return min;
+}
