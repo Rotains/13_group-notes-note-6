@@ -1,7 +1,18 @@
-함수가 왜 필요한가?
-정의된 함수를 그대로 쓰기위해서는 이름이 중요하다. 또한 의미에 맞는 함수를 사용하자.
-함수를 정의할 때 반드시 반환되는 리턴 값이 있어야 한다.
-함수를 선언하지 않고 함수를 사용하면 오류가 뜨기 때문에 선언해야한다.
+함수를 사용하는 이유가 뭐라고 생각해?
+함수를 사용하는 이유는 여러가지가 있다고 생각해.
+첫 번째로는 소스 코드의 중복성을 없애줘. 
+두 번째로는 소스의 가독성이 좋아져. 각 함수들은 특징적인 한 가지 기능만을 맡기때문이야.
+
+함수는 내가 만들 수도 있어?
+당연하지.
+우리가 보통 쓰는 함수는 라이브러리 함수라고 컴파일러에서 제공하는 함수이고
+우리가 직접 정의하는 함수는 사용자 정의 함수라고 해.
+
+여기서 중요한 점이 있어 정의된 함수를 그대로 쓰기위해서는 이름이 중요해,  의미에 맞는 함수를 사용하자.
+함수를 정의할 때 반드시 반환되는 리턴 값이 있어야 해.
+함수를 선언하지 않고 함수를 사용하면 오류가 뜨기 때문에 선언해야해.
+
+함수를 선언하고 호출해보자!
 
 #include <stdio.h>
 int sumtwo(int a, int b); // 선언을 먼저 해줘야 한다.
@@ -20,6 +31,7 @@ int sumtwo(int a, int b)
 	return result;
 }
 
+함수를 선언하고 호출하고 정의해보자! 1
 #include <stdio.h>
 float Average(float x, float y); // 함수 선언
 int main(void){
@@ -37,6 +49,7 @@ float Average(float x, float y) // 함수 정의
 	return z;
 }
 
+함수를 선언하고 호출하고 정의해보자! 2
 #include <stdio.h>
 int Integral(int start, int end); // 함수 선언
 int main(void)
@@ -72,7 +85,32 @@ int Integral(int start, int end) // 함수 정의
 }
 #endif
 
-#if 01
+엇 우리가 하던 선언과는 달리 이 예문은 함수를 선언하지 않고 바로 정의했는데 문제있는 거 아니야?
+함수를 선언하라고 우린 배웠지만 예외일때도 있어.
+함수의 선언은 main()함수에 어떤 사용자 정의 함수가 있는지 미리 알려주는 역할을 해.
+그러나 함수의 선언이 항상 필요한 것은 아니야. main()보다 먼저 함수를 정의한다면 선언하지 않아도 돼!
+선언-호출-정의 순서인데 정의 - 호출 순서로 가도 된다는 거구나!
+#include <stdio.h>
+
+int SumTwo(int a, int b) // main()보다 먼저 함수가 정의되었음으로 선언이 필요없다
+{
+   int result;
+   result = a + b;
+   return result;
+}
+
+int main(void)
+{
+   int x = 10, y = 5;
+   int value;
+
+   value = SumTwo(x, y); // 함수 호출
+
+   printf("두 수의 합 : %d\n", value);
+
+   return 0;
+}
+
 #include <stdio.h>
 
 void upper_case(char ch);
