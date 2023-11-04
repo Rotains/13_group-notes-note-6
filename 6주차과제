@@ -146,7 +146,8 @@ int factorial(int n)
 	else
 		return(n * factorial(n - 1));
 }
-
+factorial(10)은 n=10인 경우로, 10이 1보다 크기 때문에 10*factorial(9)가 되고 다시 factorial 함수를 호출해서 factorial(9)실행한다. 
+factorial()함수에서 다시 factorial()함수를 호출하는 재귀적인 방법으로 10!=10*9*8...*1을 계산하게 되는 것이다.
 
 265p 11번 문제
 #include "myheader.h"  // 헤더
@@ -176,7 +177,7 @@ int max_Array(int Array[], int size) {
    }
    return max;
 }
-//최소값
+//최솟값
 int min_Array(int Array[], int size) {
    int min = 1000;
 
